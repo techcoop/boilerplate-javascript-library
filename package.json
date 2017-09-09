@@ -1,0 +1,87 @@
+{
+  "name": "boilerplate-javascript-library",
+  "version": "0.0.1",
+  "description": ".",
+  "main": "lib/index.js",
+  "jsnext:main": "src/index.js",
+  "author": "colingagnon",
+  "license": "MIT",
+  "repository": "techcoop/boilerplate-javascript-library",
+  "keywords": [
+    "techcoop",
+    "boilerplate",
+    "webpack",
+    "babel",
+    "library",
+    "AMD",
+    "UMD"
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.21.0",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^7.1.0",
+    "babel-plugin-istanbul": "^4.1.4",
+    "babel-plugin-transform-class-properties": "^6.19.0",
+    "babel-plugin-transform-object-rest-spread": "^6.20.2",
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-2": "^6.18.0",
+    "better-npm-run": "^0.1.0",
+    "conventional-changelog": "^1.1.0",
+    "css-loader": "^0.26.1",
+    "eslint": "^3.12.2",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "fs-extra-promise": "^1.0.1",
+    "jest-cli": "^21.0.2",
+    "node-sass": "^4.0.0",
+    "postcss-loader": "^1.2.1",
+    "rimraf": "^2.6.1",
+    "sass-loader": "^6.0.6",
+    "sitemap": "^1.12.0",
+    "standard-version": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^3.0.0"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "lib/",
+    "out/"
+  ],
+  "scripts": {
+    "preversion": "yarn test",
+    "lint": "eslint src/**/*.js",
+    "pretest": "yarn run lint",
+    "test": "jest",
+    "test:dev": "jest --watch",
+    "test:all": "jest --watch",
+    "docs": "echo \"TODO docs\"",
+    "clean": "rimraf lib rimraf out",
+    "compile:es6": "better-npm-run compile:es6",
+    "compile:umd": "better-npm-run compile:umd",
+    "compile:examples": "better-npm-run compile:examples",
+    "start": "yarn run compile -- --watch",
+    "release": "yarn run lint yarn run clean && yarn test && yarn run compile:es6 && yarn run compile:umd && yarn run compile:examples && standard-version"
+  },
+  "betterScripts": {
+    "compile:es6": {
+      "command": "babel src --ignore __tests__ --out-dir lib",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    "compile:umd": {
+      "command": "webpack",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    "compile:examples": {
+      "command": "yarn run compile:umd && cp -r out/* examples",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  }
+}

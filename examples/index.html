@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library (UMD and ES6 module) Example</title>
+    <script src="boilerplate-javascript-library.js"></script>
+    <link rel="stylesheet" href="boilerplate-javascript-library.css">
+</head>
+<body>
+    <h1>Boilerplate Library</h1>
+    <div id="boilerplate-javascript-library" class="tc-boilerplate">
+        <h2>Test Output</h2>
+    </div>
+    <br />
+    <script>
+        // Get a reference to our display object
+        var element = window.document.getElementById('boilerplate-javascript-library')
+
+        // Use a static function exported from library
+        var staticElement = document.createElement('pre')
+        staticElement.innerHTML = BoilerplateJavascriptLibrary.getOutput('Hello', 'World, Static functions!')
+        element.appendChild(staticElement)
+
+        // Create an instance of a class and use a member function
+        var instance = new BoilerplateJavascriptLibrary.Module()
+        var classElement = document.createElement('pre')
+        classElement.innerHTML = instance.get('Hello', 'World, Classes with functions!')
+        element.appendChild(classElement)
+    </script>
+    <div class="tc-boilerplate">
+        <h2>Use as an ES6 Module</h2>
+        <pre class="tc-boilerplate__code">
+            import { getOutput, Module } from 'boilerplate-javascript-library'
+
+            // Static function
+            const staticFunction = getOutput('Hello', 'World')
+
+            // Create new instance of class
+            const instance = new Module()
+            const classFunction = instance.get('Hello', 'World')
+        </pre>
+    </div>
+    <div class="tc-boilerplate">
+        <h2>Use as UMD module</h2>
+
+        <h3>Static functions</h3>
+        <pre class="tc-boilerplate__code">
+            var output
+
+            // With default param
+            output = BoilerplateJavascriptLibrary.getOutput('Hello', 'World')
+
+            // With parameter
+            output = BoilerplateJavascriptLibrary.getOutput('Hello', 'World', ', ')
+        </pre>
+        <h3>Class instances functions</h3>
+        <pre class="tc-boilerplate__code">
+            var instance, output
+
+            // With default param
+            instance = new BoilerplateJavascriptLibrary.Module()
+            output = instance.get('Hello', 'World')
+
+            // With constructor parameter
+            instance = new BoilerplateJavascriptLibrary.Module(', ')
+            output = instance.get('Hello', 'World')
+        </pre>
+        <br />
+    </div>
+    <br />
+
+</body>
+</html>
