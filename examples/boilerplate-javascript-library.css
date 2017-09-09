@@ -1,0 +1,12 @@
+.tc-boilerplate {
+  border: 1px #444;
+  margin: 5px;
+  padding: 10px 20px 10px 20px; }
+
+.tc-boilerplate__code {
+  color: #444;
+  background-color: #E9E9E9;
+  font-size: 12px;
+  padding: 10px; }
+
+/*# sourceMappingURL=boilerplate-javascript-library.css.map*/
