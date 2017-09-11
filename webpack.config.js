@@ -4,7 +4,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: {
-    'boilerplate-javascript-library': './src/index.js'
+    'boilerplate-javascript-library': './src/index.js',
+    'styles': './src/styles.js'
   },
   output: {
     // TODO fix path resolve issue, webpack < 2.2.1 breaks on windows https://github.com/webpack/webpack/issues/4530
@@ -54,7 +55,7 @@ module.exports = {
       },
     }),
     new ExtractTextPlugin({
-      filename: '[name].css',
+      filename: 'boilerplate-javascript-library.css',
       allChunks: true,
     }),
   ],

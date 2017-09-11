@@ -28,7 +28,7 @@
         element.appendChild(classElement)
     </script>
     <div class="tc-boilerplate">
-        <h2>Use as an ES6 Module</h2>
+        <h2>Use in ES6</h2>
         <pre class="tc-boilerplate__code">
             import { getOutput, Module } from 'boilerplate-javascript-library'
 
@@ -38,6 +38,19 @@
             // Create new instance of class
             const instance = new Module()
             const classFunction = instance.get('Hello', 'World')
+        </pre>
+    </div>
+    <div class="tc-boilerplate">
+        <h2>Use in Node</h2>
+        <pre class="tc-boilerplate__code">
+            var BoilerplateJavascriptLibrary = require('boilerplate-javascript-library')
+
+            // Static function
+            var staticFunction = BoilerplateJavascriptLibrary.getOutput('Hello', 'World')
+
+            // Create new instance of class
+            var instance = new BoilerplateJavascriptLibrary.Module()
+            var classFunction = instance.get('Hello', 'World')
         </pre>
     </div>
     <div class="tc-boilerplate">
