@@ -61,7 +61,7 @@
     "compile:umd": "better-npm-run compile:umd",
     "compile:docs": "better-npm-run compile:docs",
     "start": "yarn run compile -- --watch",
-    "release": "yarn run lint yarn run clean && yarn test && yarn run compile:amd && yarn run compile:umd && yarn run compile:examples && standard-version"
+    "release": "yarn run lint yarn run clean && yarn test && yarn run compile:amd && yarn run compile:umd && yarn run compile:docs && standard-version"
   },
   "betterScripts": {
     "compile:amd": {
