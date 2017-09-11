@@ -17,7 +17,6 @@ yarn install
 
 ### ES6
 ```javascript
-// Import with ES6 
 import { getOutput, Module } from 'boilerplate-javascript-library'
 
 // Static function
@@ -26,6 +25,18 @@ const staticFunction = getOutput('Hello', 'World')
 // Create new instance of class
 const instance = new Module()
 const classFunction = instance.get('Hello', 'World')
+```
+
+### Node
+```javascript
+var BoilerplateJavascriptLibrary = require('boilerplate-javascript-library')
+
+// Static function
+var staticFunction = BoilerplateJavascriptLibrary.getOutput('Hello', 'World')
+
+// Create new instance of class
+var instance = new BoilerplateJavascriptLibrary.Module()
+var classFunction = instance.get('Hello', 'World')
 ```
 
 ### UMD
@@ -59,17 +70,14 @@ yarn start
 # Run test normal
 yarn test
 
-# Run only updated tests with watch
-yarn run test:dev
-
-# Run all tests with watch
-yarn run test:all 
+# Run watcher
+yarn watch
 ```
 
 # Releasing
 ```bash
-# Compile ES6
-yarn run compile:es6
+# Compile AMD
+yarn run compile:amd
 
 # Compile UMD
 yarn run compile:umd
@@ -87,10 +95,11 @@ Commit message format
 https://conventionalcommits.org/
 
 # Documentation
-### TODO create API documentation... jsdoc??
-
-# Examples
 You can see the legacy UMD module in use in examples/index.html
+
+# TODO
+- Improve handling for styles in es6
+
 
 # Contributors
 [Colin Gagnon][admin]

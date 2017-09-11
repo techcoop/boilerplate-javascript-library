@@ -54,19 +54,18 @@
     "lint": "eslint src/**/*.js",
     "pretest": "yarn run lint",
     "test": "jest",
-    "test:dev": "jest --watch",
-    "test:all": "jest --watch",
+    "watch": "jest --watchAll",
     "docs": "echo \"TODO docs\"",
     "clean": "rimraf lib rimraf out",
-    "compile:es6": "better-npm-run compile:es6",
+    "compile:amd": "better-npm-run compile:amd",
     "compile:umd": "better-npm-run compile:umd",
-    "compile:examples": "better-npm-run compile:examples",
+    "compile:docs": "better-npm-run compile:docs",
     "start": "yarn run compile -- --watch",
-    "release": "yarn run lint yarn run clean && yarn test && yarn run compile:es6 && yarn run compile:umd && yarn run compile:examples && standard-version"
+    "release": "yarn run lint yarn run clean && yarn test && yarn run compile:amd && yarn run compile:umd && yarn run compile:examples && standard-version"
   },
   "betterScripts": {
-    "compile:es6": {
-      "command": "babel src --ignore __tests__ --out-dir lib",
+    "compile:amd": {
+      "command": "babel src --ignore __tests__ --out-dir lib && cp -r src/styles lib",
       "env": {
         "NODE_ENV": "production"
       }
@@ -78,7 +77,7 @@
       }
     },
     "compile:examples": {
-      "command": "yarn run compile:umd && cp -r out/* examples",
+      "command": "yarn run compile:umd && cp -r out/* docs",
       "env": {
         "NODE_ENV": "production"
       }

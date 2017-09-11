@@ -1,6 +1,3 @@
-// Import styles
-import './styles/index.scss'
-
 // Import static function
 export { getOutput } from './utils'
 
