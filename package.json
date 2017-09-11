@@ -1,6 +1,6 @@
 {
   "name": "boilerplate-javascript-library",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "A boilerplate for a generic javascript library which compiles for use as an ES6 module or UMD (for legacy apps)",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
