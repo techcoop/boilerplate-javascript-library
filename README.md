@@ -77,16 +77,16 @@ yarn watch
 # Releasing
 ```bash
 # Compile AMD
-yarn run compile:amd
+yarn compile:amd
 
 # Compile UMD
-yarn run compile:umd
+yarn compile:umd
 
 # Compile examples
-yarn run compile:examples
+yarn compile:examples
 
 # Create new versioned release
-yarn run release
+yarn release
 ```
 Documentation for release library
 https://github.com/conventional-changelog/standard-version
