@@ -52,7 +52,7 @@
   "scripts": {
     "preversion": "yarn test",
     "lint": "eslint src/**/*.js",
-    "pretest": "yarn run lint",
+    "pretest": "yarn lint",
     "test": "jest",
     "watch": "jest --watchAll",
     "docs": "echo \"TODO docs\"",
@@ -60,8 +60,8 @@
     "compile:amd": "better-npm-run compile:amd",
     "compile:umd": "better-npm-run compile:umd",
     "compile:docs": "better-npm-run compile:docs",
-    "start": "yarn run compile -- --watch",
-    "release": "yarn run lint yarn run clean && yarn test && yarn run compile:amd && yarn run compile:umd && yarn run compile:docs && standard-version"
+    "start": "babel src --ignore __tests__ --out-dir lib --watch",
+    "release": "yarn lint yarn clean && yarn test && yarn compile:amd && yarn compile:umd && yarn compile:docs && standard-version"
   },
   "betterScripts": {
     "compile:amd": {
@@ -77,7 +77,7 @@
       }
     },
     "compile:docs": {
-      "command": "yarn run compile:umd && cp -r out/* docs",
+      "command": "yarn compile:umd && cp -r out/* docs",
       "env": {
         "NODE_ENV": "production"
       }
