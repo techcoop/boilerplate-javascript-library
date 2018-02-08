@@ -55,7 +55,7 @@
     "pretest": "yarn lint",
     "test": "jest",
     "watch": "jest --watchAll",
-    "docs": "echo \"TODO docs\"",
+    "docs": "echo \"TODO docs\" ",
     "clean": "rimraf lib rimraf out",
     "compile:amd": "better-npm-run compile:amd",
     "compile:umd": "better-npm-run compile:umd",
